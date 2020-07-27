@@ -101,7 +101,7 @@ const Graph = () => {
         </button>
         </div>
 
-        <div style={{
+        <div className = "simulation" style={{
             display:'grid',
             gridTemplateColumns: `repeat(${numCols}, 10px)`
         }}>

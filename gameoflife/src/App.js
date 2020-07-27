@@ -7,8 +7,11 @@ import Graph from './components/graph'
 const App = () => {
   return (
     <div className="App">
+      <div className="introHome">
       <h1>Game Of Life Simulation</h1>
-      <p>"Conways Game Of Life" Simulates Cellular Automation on the spread of living organisms.</p>
+      <p>"Conways Game Of Life" Simulates Cellular Automation</p>
+      <alt><strong>Programmed by Robert Gondola</strong></alt>
+      </div>
       <div className = "homeComponent">
         <Graph />
         <Rules />
