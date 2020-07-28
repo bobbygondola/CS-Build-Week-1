@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import produce from 'immer'
 
 const numRows = 60;
@@ -29,7 +29,20 @@ const Graph = () => {
         return generateEmptyGrid()
     });
 
+    const [speed, setSpeed] = useState(87);
+
+    const [seconds, setSeconds] = useState(0)
+
     const [running, setRunning] = useState(false);
+
+  useEffect(() => {
+    if (running) {
+      const intervalId = window.setInterval(() => {
+        setSeconds(seconds => seconds + 1);
+      }, 1500);
+      return () => window.clearInterval(intervalId);
+    }
+  }, [running]);
 
     const runningRef = useRef(running);
     runningRef.current = running
@@ -62,7 +75,8 @@ const Graph = () => {
             });
           });
       
-          setTimeout(runSimulation, 100);
+          setTimeout(runSimulation, speed);
+          console.log(speed)
         }, []);
     
     return (
@@ -86,8 +100,7 @@ const Graph = () => {
         <button onClick={() => {
             setGrid(generateEmptyGrid())
         }}>
-        Clear Simulation
-        </button>
+        Clear Simulation </button>
 
         <button onClick={() => {
             const rows = [];
@@ -97,10 +110,13 @@ const Graph = () => {
             setGrid(rows)
         }}
         >
-        Random Simulation
-        </button>
+        Random Simulation </button>
+
+        
+
         </div>
 
+        <div className="graphStats">
         <div className = "simulation" style={{
             display:'grid',
             gridTemplateColumns: `repeat(${numCols}, 10px)`
@@ -124,6 +140,23 @@ const Graph = () => {
                     />
                 )
             )}
+        </div>
+        <div className="stats">
+        <p>Current Years/Second Speed <strong>{speed} years/s</strong></p>
+        <p>Time Passed <strong>{seconds * speed} years</strong></p>
+        <button onClick={() => 
+            setSpeed(speed + 10)
+        }>
+            Time Speed + 10 (years/sec)
+        </button>
+        
+        <button onClick = {() => {
+            setSpeed(speed - 10)
+        }}>
+            Time Speed - 10 (years/sec)
+        </button>
+        </div>
+        
         </div>
     </>
     )
