@@ -10,6 +10,8 @@ const Info = () => {
             <p>John Conway explained in an interview how the idea for this came came about when talking about colonizing Mars. The idea of sending robots to harvest Iron, smelt said Iron and create new robots to recursively repeat the process. Ultimately creating many robots, with the help of smelting the iron, using its by product to produce oxygen, they can create and compress an atmosphere to sustain life. This was not a Computer Science algorithm but a logical one. I continue that curiosity through my work and development. Rest In Peace, John Conway.</p>
                  <p>-</p>
             <p>i.e - create nodes, watch how they evolve over time based on set rules.</p>
+                 <p>-</p>
+            <p><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">More Info</a></p>
         </div>
     )
 }

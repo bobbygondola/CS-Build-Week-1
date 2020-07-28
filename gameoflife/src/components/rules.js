@@ -10,8 +10,7 @@ const Rules = () => {
                 reproduce or not. Try different strategies to keep them alive. Press <strong>STOP SIMULATION </strong>
                  before running again. Enjoy the original idea created by <strong>John Conway</strong>, Programmed by <strong>Robert Gondola</strong>
             </p>
-            <br />
-            <br />
+            <p>-</p>
             <h4>Rule 1</h4>
             <p>Any live cell with fewer than two live neighbours dies, underpopulation.</p>
             <h4>Rule 2</h4>
@@ -24,6 +23,7 @@ const Rules = () => {
             <h6>Github - <a href="https://github.com/bobbygondola">Robert Gondola</a></h6>
             <h6>Linkedin - <a href="https://www.linkedin.com/in/robert-gondola-6455781a3/">Robert Gondola</a></h6>
             <h6>Portfolio - <a href="https://portfolio-henna-three.vercel.app/bobbygondola">www.RobertGondolaUSA.com</a></h6>
+            <p><a href="mailto:bobertgondola@gmail.com">Send Me An Email!</a></p>
         </div>
     )
 }

@@ -13,6 +13,10 @@ const generateEmptyGrid = () => {
         return rows
 }
 
+function refreshPage() {
+    window.location.reload(false);
+  }
+
 const operations = [
     [0, 1],
     [0, -1],
@@ -29,23 +33,30 @@ const Graph = () => {
         return generateEmptyGrid()
     });
 
+    {/* STATE DRIVEN VARIABLES */}
+
     const [speed, setSpeed] = useState(87);
 
     const [seconds, setSeconds] = useState(0)
 
     const [running, setRunning] = useState(false);
 
-  useEffect(() => {
+
+    {/* FOR TIMING */}
+
+    useEffect(() => {
     if (running) {
       const intervalId = window.setInterval(() => {
         setSeconds(seconds => seconds + 1);
       }, 1500);
       return () => window.clearInterval(intervalId);
-    }
-  }, [running]);
+        }
+    }, [running]);
 
     const runningRef = useRef(running);
     runningRef.current = running
+
+    {/* RUN SIMULATION FN & NEIGHBOR CHECKER */}
 
     const runSimulation = useCallback(() => {
         if (!runningRef.current){
@@ -81,6 +92,9 @@ const Graph = () => {
     
     return (
         <>
+        {/* BUTTONS */}
+
+
         <div className="simulationButtons">
         {/* START SIM*/}
         <button
@@ -103,20 +117,21 @@ const Graph = () => {
         }}>
         Clear Simulation </button>
 
+        {/*ADD RESET SPEED!!!!!!!!!!!!!!!!!!!!!!!!!! */}
         <button onClick={() => {
             const rows = [];
             for (let i = 0; i < numRows; i++) {
                 rows.push(Array.from(Array(numCols), () => Math.random() > 0.8 ? 1 : 0))
             }
             setGrid(rows)
-            setSpeed(speed)
+            setSpeed(87)
         }}
         >
         Random Simulation </button>
-
-        
-
         </div>
+
+
+        {/* GRID AND SIMULATION */}
 
         <div className="graphStats">
         <div className = "simulation" style={{
@@ -143,10 +158,15 @@ const Graph = () => {
                 )
             )}
         </div>
+
+        {/* STATS */}
+        {/*FAST & SLOW BUTTONS */}
+
         <div className="stats">
         <p>Current Years/Second Speed: <strong>{speed} years/s</strong></p>
         <p>Time Passed: <strong>{seconds * speed} years</strong></p>
         <p>Generations: <strong>{seconds}</strong></p>
+
         <button onClick={() => 
             setSpeed(speed + 10)
         }>
