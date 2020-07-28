@@ -38,15 +38,21 @@ h4{
   margin-bottom: 1%;
   font-family: sans-serif;
 }
-
+a {
+  color: black;
+}
 /* //////RULES COMPONENT///// */
 .rulesComponent{
   width: fit-content;
+}
+.rulesComponent a{
+  color: black;
 }
 
 .rulesTxt{
   width: 75%;
   margin: 0 auto;
+  border-bottom: 1px solid black;
 }
 /*GRAPH COMPONENT*/
 

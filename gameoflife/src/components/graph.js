@@ -99,6 +99,7 @@ const Graph = () => {
         {/* CLEAR SIM*/}
         <button onClick={() => {
             setGrid(generateEmptyGrid())
+            setSeconds(0)
         }}>
         Clear Simulation </button>
 
