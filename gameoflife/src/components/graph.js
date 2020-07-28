@@ -109,6 +109,7 @@ const Graph = () => {
                 rows.push(Array.from(Array(numCols), () => Math.random() > 0.8 ? 1 : 0))
             }
             setGrid(rows)
+            setSpeed(speed)
         }}
         >
         Random Simulation </button>
@@ -143,8 +144,9 @@ const Graph = () => {
             )}
         </div>
         <div className="stats">
-        <p>Current Years/Second Speed <strong>{speed} years/s</strong></p>
-        <p>Time Passed <strong>{seconds * speed} years</strong></p>
+        <p>Current Years/Second Speed: <strong>{speed} years/s</strong></p>
+        <p>Time Passed: <strong>{seconds * speed} years</strong></p>
+        <p>Generations: <strong>{seconds}</strong></p>
         <button onClick={() => 
             setSpeed(speed + 10)
         }>

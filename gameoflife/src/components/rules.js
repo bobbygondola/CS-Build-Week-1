@@ -5,7 +5,7 @@ const Rules = () => {
         <div className="rulesComponent">
             <div className="rulesTxt">
             <h3>How to Use:</h3>
-            <h5>Try - Try 5 squares in a straight line!</h5>
+            <h5>Try - Try 5 squares in a straight line! Then start!</h5>
             <p>Click on squares or use <strong>RANDOM</strong> to simulate living organisms and if they will
                 reproduce or not. Try different strategies to keep them alive. Press <strong>STOP SIMULATION </strong>
                  before running again. Enjoy the original idea created by <strong>John Conway</strong>, Programmed by <strong>Robert Gondola</strong>
