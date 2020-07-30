@@ -73,7 +73,7 @@ const Graph = () => {
 
         //updating [grid, setGrid]
           // g = current value - on immer produce fn
-        setGrid(g => {
+        setGrid(g => { 
             return produce(g, gridCopy => {
               //gridCopy will be updated now based on..
               for (let i = 0; i < numRows; i++) {
