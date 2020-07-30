@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Rules from './components/rules';
 import Graph from './components/graph';
